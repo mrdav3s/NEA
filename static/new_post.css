@@ -1,0 +1,23 @@
+#content{
+    width: 95%;
+    height: 50vh;        
+    padding: 10px;       
+    font-size: 16px;
+    border-radius: 5px;   
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+#title{
+    width: 35%;
+    height: 7vh;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 5px;   
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+fieldset{
+    background-color: aqua;
+}

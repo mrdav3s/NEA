@@ -1,0 +1,100 @@
+.sidebar{
+    margin-top: 0.5%;
+    height: 98%;
+    width: 15%;
+    background-color: #5f0b0b;
+    color: #ecf0f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 10x;
+    border-radius: 10px;
+
+}
+
+.sidebar img{
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    left: 13%;
+    top: 2%;
+}
+
+.sidebar .info {
+    position: relative;
+    left: 5%;
+    top: 2%;
+    text-align: center;
+}
+
+.sidebar .info h2 {
+    font-size: 1.5em;
+    margin: 0px 0 1px -25px;
+}
+
+.sidebar .info h3 {
+    font-size: 0.8em;
+    margin: 8px 0 1px -30px;
+}
+
+.container {
+    height: 90vh;
+    width: 81.5%;
+    margin-right: 10%;
+    background-color: rgb(255, 191, 100);
+    margin-left: 15%;
+    padding: 20px;
+}
+
+.welcome h1{
+    margin-top: 0%;
+    color: #030000;
+    font-size: 320%;
+}
+
+.welcome h2{
+    margin-top: 0%;
+    color: #030000;
+    font-size: 100%;
+}
+
+.message{
+    background-color: #5f0b0b;
+    position: relative;
+    left: 5%;
+    top: 1vh;
+    width: 30vw;
+    height: auto;
+    border-radius: 10%;
+    text-align: center;
+}
+.message img{
+    position: relative;
+    align-items: center;
+    width: 10vw;
+    height: auto;
+}
+
+.students{
+    background-color: #b32727cc;
+    position: relative;
+    left: 5%;
+    top: 6vh;
+    width: 30vw;
+    height: auto;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.students img{
+    position: relative;
+    align-items: center;
+    width: 9vw;
+    height: auto;
+}
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+{% extends "base_page.html" %}
+
+{% block head %}
+    <title>Studsight - Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='students.css') }}">
+{% endblock %}
+
+{% block body %}
+    <a href="#" onclick="history.back()">Back</a>
+    <form method="POST" action="{{ url_for('add_student') }}">
+        <h2>Add New Student</h2>
+
+        <fieldset>
+            <legend>Student Info:</legend>
+
+            <label for="firstname">First name:</label>
+            <input type="text" id="firstname" name="firstname" required><br><br>
+
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required><br><br>
+
+            <div>
+                <p>Select Gender:</p>
+                <input type="radio" id="male" name="gender" value="M" />
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="F" />
+                <label for="female">Female</label>
+            </div>
+            <br>
+
+            <label for="yeargroup">Yeargroup:</label>
+            <input type="number" id="yeargroup" name="yeargroup" min="7" max="13" required><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="mastery">Mastery:</label>
+            <input type="text" id="mastery" name="mastery" ><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Additional Info:</legend>
+            
+            <label for="parentname">Parent/Guardian Name:</label>
+            <input type="text" id="parentname" name="parentname" required><br><br>
+
+            <label for="parentnumber">Parent/Guardian Contact Number:</label>
+            <input type="tel" id="parentnumber" name="parentnumber" required><br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="nationality" name="nationality" required><br><br>
+
+            <label for="countryofbirth">Country of Birth:</label>
+            <input type="text" id="countryofbirth" name="countryofbirth" required><br><br>
+
+            <label for="enrollmentdate">Enrollment Date:  </label>
+            <input type="date" id="enrollmentdate" name="enrollmentdate" required><br><br>
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Medical Info:<br><br><small>If none, enter "N/A" for all fields</small></legend>
+
+            <label for="conditions">Conditions: </label>
+            <input placeholder="N/A" type="text" id="conditions" name="conditions"><br><br>
+
+            <label for="allergies">Allergies: </label>
+            <input placeholder="N/A" type="text" id="allergies" name="allergies"><br><br>
+
+            <label for="medications">Medications: </label>
+            <input placeholder="N/A" type="text" id="medications" name="medications"><br><br>
+
+            <label for="needs">Needs</label>
+            <input placeholder="N/A" type="text" id="needs" name="needs"><br><br>
+        </fieldset>
+        <br><br>
+        <button type="submit">Add Student</button><br><br><br>
+    </form>
+{% endblock %}

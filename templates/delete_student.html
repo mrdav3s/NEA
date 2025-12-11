@@ -1,0 +1,50 @@
+{% extends "base_page.html"%}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='delete_student.css')  }}">
+{% endblock %}
+
+{% block body %}
+    <div>
+        <a href="#" onclick="history.back()">Back</a>
+        <div class="container">
+        <table>
+            <tr>
+                <th style="width: 6%;">ID</th>
+                <th style="width: 14%;">First Name</th>
+                <th style="width: 14%;">Last Name</th>
+                <th style="width: 4%;">Gender</th>
+                <th style="width: 10%;">D.O.B</th>
+                <th style="width: 5%;">Year</th>
+                <th style="width: 7%;">Mastery</th>
+                <th style="width: 12%;">Email</th>
+                <th style="width: 9%;">Guardian Contact</th>
+                <th style="width: 25%;">Address</th>
+            </tr>
+            
+            <form method="POST" action="{{ url_for('delete_student') }}">
+                <button type="submit">Delete Student</button><br>
+                {% for student in students %}
+                    <tr>
+                        <input type="radio" id="studentid" name="studentid" value=" {{ student[0] }}" />
+                        <label for="studentid">
+                            <td>{{ student[0] }}</td>
+                            <td>{{ student[1] }}</td>
+                            <td>{{ student[2] }}</td>
+                            <td>{{ student[4] }}</td>
+                            <td>{{ student[3] }}</td>
+                            <td>{{ student[6] }}</td>
+                            <td>{{ student[5] }}</td>
+                            <td>{{ student[7] }}</td>
+                            {% for details in info %}
+                                {% if details[0] == student[0] %}
+                                    <td>{{ details[2] }}</td>
+                                    <td>{{ details[3] }}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </label>
+                    </tr>
+                {% endfor %}
+            </form>
+        </table>
+    </div>
+{% endblock %}

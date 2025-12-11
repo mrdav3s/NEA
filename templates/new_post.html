@@ -1,0 +1,26 @@
+{% extends "base_page.html"%}
+{%block head%}
+    <title>Studsight - New Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='new_post.css') }}">
+{%endblock%}
+{% block body%}
+    <script src="{{ url_for('static', filename='new_post.js') }}" charset="utf-8"></script>
+    <section class="new-post-form">
+        <a href="#" onclick="history.back()">Back</a>
+        <h1>Create New Post</h1>
+        <form method="POST" action="{{ url_for('new_post') }}">
+            
+            <textarea id="title" name="title" placeholder="Title" required></textarea><br><br>
+            
+            <fieldset>
+                <label for="attachments">Attachments:&nbsp</label>
+                <input type="file" id="attachments" name="attachments"><br><br>
+
+                <textarea id="content" name="content" placeholder="Write Content.." required></textarea><br>
+            </fieldset><br><br>
+    
+
+            <button type="submit">Submit Post</button><br><br><br>
+        </form>
+    </section>
+{%endblock%}

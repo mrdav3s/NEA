@@ -1,0 +1,11 @@
+{% extends "base_student.html" %}
+{% block head %}
+    <title>Studsight - Admin Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_students.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+    <a href="{{ url_for('add_student') }}" >Add New Student</a>
+    <a href="{{ url_for('delete_student') }}" >Delete Student</a>
+    <a href="#" >Import CSV</a>
+{% endblock %}

@@ -1,2 +1,6 @@
 Flask
+Flask-Mail
 Gunicorn
+SQLAlchemy
+pyinputplus
+Flask-Login

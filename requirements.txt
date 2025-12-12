@@ -4,3 +4,6 @@ Gunicorn
 SQLAlchemy
 pyinputplus
 Flask-Login
+pandas
+numpy
+matplotlib

@@ -120,7 +120,6 @@ def login():
                 return redirect(url_for('dashboard'))
             elif user2: 
                 flash('Incorrect password. Try again.')
-                return redirect(url_for('login'))
             else:
                 flash('No account found with that email. Please register.')
                 return redirect(url_for('register'))

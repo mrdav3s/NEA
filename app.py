@@ -1,6 +1,7 @@
 #IMPORTS
 from flask import Flask, render_template, session, abort, redirect, url_for, request, flash, jsonify, send_from_directory
-import datetime
+import datetime, numpy as np, os, base64, matplotlib.pyplot as plt,
+import mimetypes
 # from flask_sqlalchemy import SQLAlchemy
 # import MySQLdb.cursors
 import sqlite3

@@ -1,13 +1,13 @@
 #IMPORTS
-from flask import Flask, render_template, session, abort, redirect, url_for, request, flash, jsonify, send_from_directory
-import datetime, numpy as np, os, base64, matplotlib.pyplot as plt,
-import mimetypes
-# from flask_sqlalchemy import SQLAlchemy
-# import MySQLdb.cursors
+from flask import Flask, render_template, session, abort, flash
+from flask import redirect, url_for, request, jsonify, send_from_directory
+import datetime
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import sqlite3
-# from flask_mysqldb import MySQL
 from flask_mail import Mail, Message
-import random 
+import random
 
 
 app = Flask(__name__)

@@ -1,14 +1,14 @@
-
 tr th {
-    padding: 10px 5px 10px 5px;
-    background-color: #262525;
-    font-size: 17px;
-    color: rgb(241, 221, 221);
+  padding: 10px 5px 10px 5px;
+  background-color: #262525;
+  font-size: 17px;
+  color: rgb(241, 221, 221);
 }
 
-table, th, td {
-    border: 1px solid rgb(0, 0, 0);
-    border-collapse: collapse;
+table, th{
+  padding: 10px 0 0 0;
+  border: 1px solid rgb(0, 0, 0);
+  border-collapse: collapse;
 }
 
 .search-bar {
@@ -34,27 +34,244 @@ table, th, td {
 }
 
 .search-bar {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .search-bar button:hover {
-    background: #ccc;
+  background: #ccc;
 }
 
 
 
 .menubar{
-    width: auto;
+  width: auto;
 }
 
 .search-bar a{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
 }
 
 body{
-    margin-left: 1%;
-    margin-right: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+body p{
+  font-size: 20px;
+}
+
+.back a{
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 8px;
+  font-size: 120%;
+  color: #030000;
+}
+
+
+.back a:link, .back a:visited {
+  background-color: #41302f;
+  color: rgb(255, 255, 255);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.back a:hover, .back a:active {
+  background-color: rgb(147, 136, 136);
+}
+
+
+
+
+.student-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clickable-row:hover {
+  background-color: #e7cacaa1;
+}
+
+
+
+td {
+  padding: 10px 0 0 0;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid rgb(0, 0, 0);
+  border-collapse: collapse;
+}
+
+/* Mobile sidebar navigation */
+@media (max-width: 768px) {
+  .menubar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #262525;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .menubar.active {
+    left: 0;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .search-bar input[type=text] {
+    width: 90%;
+    font-size: 16px;
+    padding: 8px;
+  }
+  
+  .search-bar button {
+    width: 90%;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  table, th, td {
+    font-size: 12px;
+  }
+  
+  tr th {
+    padding: 6px 2px 6px 2px;
+    font-size: 12px;
+  }
+  
+  td {
+    padding: 6px 0 0 0;
+  }
+  
+  .clickable-row:hover {
+    background-color: #d9b5ae;
+  }
+  
+  body p {
+    font-size: 14px;
+  }
+  
+  .back a {
+    font-size: 100%;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  table, th, td {
+    font-size: 14px;
+  }
+  
+  tr th {
+    padding: 8px 3px 8px 3px;
+    font-size: 14px;
+  }
+  
+  td {
+    padding: 8px 0 0 0;
+  }
+  
+  .search-bar input[type=text] {
+    font-size: 18px;
+    padding: 5px;
+  }
+  
+  .search-bar button {
+    font-size: 15px;
+    padding: 8px 8px;
+  }
+  
+  body p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menubar {
+    width: 200px;
+  }
+  
+  table, th, td {
+    font-size: 11px;
+  }
+  
+  tr th {
+    padding: 4px 2px 4px 2px;
+    font-size: 11px;
+  }
+  
+  td {
+    padding: 4px 0 0 0;
+  }
+  
+  .search-bar input[type=text] {
+    width: 80%;
+    font-size: 14px;
+    padding: 6px;
+  }
+  
+  .search-bar button {
+    width: 80%;
+    font-size: 13px;
+    padding: 6px 6px;
+  }
+  
+  body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  body p {
+    font-size: 13px;
+  }
+  
+  .back a {
+    font-size: 90%;
+    padding: 8px 12px;
+    margin-left: 4px;
+  }
+}
+
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  background: #262525;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 }

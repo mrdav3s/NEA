@@ -8,7 +8,9 @@
 
 {% block body %}
     <div class="menu-bar">
-        <a href="#" onclick="history.back()">Back</a>
+        <div class="back">
+            <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+        </div>
         <h1>Students List</h1>
         {% block content %}{% endblock %}
     </div>
@@ -21,7 +23,7 @@
         </form>
     </div>
     {% if query %}
-    <p style="color: #666; margin: 10px 0;">Search results for: <strong>{{ query }}</strong> ({{ students|length }} found)</p>
+        <p style="color: #666; margin: 10px 0;">Search results for: <strong>{{ query }}</strong> ({{ students|length }} found)</p>
     {% endif %}
     <div class="container">
         <table>
@@ -58,3 +60,8 @@
         </table>
     </div>
 {% endblock %}
+
+
+
+
+<!-- <tr class="clickable-row" data-href="{{ url_for('view_student', student_id=student[0]) }}" style="cursor: pointer;"> -->

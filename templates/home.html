@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="/static/home.css">
     <title>StudSight - Home</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
             <div class="subtitle">Encouraging teacher collaboration to help students learn.<br>Collaboration & insight for modern classrooms.</div>
 
             <div class="login-bttn">
-                <button class="signin-btn" onclick="window.location.href='{{ url_for('login') }}'">Sign In</button>
+                <button class="signin-btn" onclick="window.location.href='/login'">Sign In</button>
             </div>
         </header>
 

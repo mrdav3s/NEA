@@ -1,14 +1,13 @@
-
 tr th {
-    padding: 10px 5px 10px 5px;
-    background-color: #262525;
-    font-size: 17px;
-    color: rgb(241, 221, 221);
+  padding: 10px 5px 10px 5px;
+  background-color: #262525;
+  font-size: 17px;
+  color: rgb(241, 221, 221);
 }
 
 table, th, td {
-    border: 1px solid rgb(0, 0, 0);
-    border-collapse: collapse;
+  border: 1px solid rgb(0, 0, 0);
+  border-collapse: collapse;
 }
 
 .search-bar {
@@ -34,27 +33,246 @@ table, th, td {
 }
 
 .search-bar {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .search-bar button:hover {
-    background: #ccc;
+  background: #ccc;
 }
 
 
 
 .menubar{
-    width: auto;
+  width: auto;
 }
 
 .search-bar a{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 body{
-    margin-left: 1%;
-    margin-right: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
+
+.back a{
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 8px;
+  font-size: 120%;
+  color: #030000;
+}
+
+
+.back a:link, .back a:visited {
+  background-color: #41302f;
+  color: rgb(255, 255, 255);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.back a:hover, .back a:active {
+  background-color: rgb(147, 136, 136);
+}
+
+
+nav a{
+  text-align: center;
+  float: right;
+  text-decoration: none;
+  color: #262525;
+}
+
+nav a{
+  /* margin-top: 10px; */
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 8px;
+  font-size: 120%;
+  color: #030000;
+}
+
+/* Responsive design for tablets and mobile */
+@media (max-width: 1024px) {
+  tr th {
+    padding: 8px 4px 8px 4px;
+    font-size: 15px;
+  }
+  
+  td {
+    padding: 8px 0 0 0;
+    font-size: 14px;
+  }
+  
+  .search-bar input[type=text] {
+    font-size: 20px;
+    padding: 5px;
+  }
+  
+  .search-bar button {
+    font-size: 16px;
+    padding: 9px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
+  
+  tr th {
+    padding: 6px 3px 6px 3px;
+    font-size: 13px;
+  }
+  
+  table, th, td {
+    font-size: 12px;
+  }
+  
+  td {
+    padding: 6px 0 0 0;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  
+  .search-bar input[type=text] {
+    width: 85%;
+    font-size: 16px;
+    padding: 6px;
+    margin: 0 auto 8px auto;
+  }
+  
+  .search-bar button {
+    width: 85%;
+    font-size: 14px;
+    padding: 8px 6px;
+    margin: 0 auto;
+    float: none;
+  }
+  
+  .search-bar a {
+    margin-top: 10px;
+  }
+  
+  .back a {
+    font-size: 100%;
+    padding: 10px 15px;
+  }
+  
+  nav a {
+    font-size: 100%;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  tr th {
+    padding: 5px 2px 5px 2px;
+    font-size: 11px;
+  }
+  
+  table, th, td {
+    font-size: 10px;
+  }
+  
+  td {
+    padding: 5px 0 0 0;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+  }
+  
+  .search-bar input[type=text] {
+    width: 90%;
+    font-size: 14px;
+    padding: 5px;
+    margin: 0 auto 6px auto;
+  }
+  
+  .search-bar button {
+    width: 90%;
+    font-size: 12px;
+    padding: 6px 4px;
+    margin: 0 auto;
+    float: none;
+  }
+  
+  .back a {
+    font-size: 85%;
+    padding: 8px 10px;
+    margin-left: 2px;
+  }
+  
+  nav a {
+    font-size: 85%;
+    padding: 6px 6px;
+    margin-left: 2px;
+  }
+}
+
+
+nav a:link, nav a:visited {
+  background-color: #356b16;
+  color: rgb(255, 255, 255);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav a:hover, nav a:active {
+  background-color: rgb(49, 201, 6);
+}
+
+nav a.red{
+  background-color: #742521;
+} 
+
+nav a.red:hover, nav a.red:active {
+  background-color: rgb(255, 0, 0);
+}
+
+
+
+.student-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clickable-row:hover {
+  background-color: #e7cacaa1;
+}
+
+
+
+td {
+  padding: 10px 0 0 0;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid rgb(0, 0, 0);
+  border-collapse: collapse;
+}
+

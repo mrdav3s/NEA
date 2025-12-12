@@ -1,13 +1,15 @@
 {% extends "base_page.html" %}
 {% block head %}
     <title>Studsight - Messages</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='science.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='department_page.css') }}">
 {% endblock %}
 {% block body %}
     <section class="messages">
-        <a href="#" onclick="history.back()">Back</a>
+        <div class="back">
+            <a href="{{ url_for('dashboard') }}">Back</a>
+        </div>          
         <h1>CHOOSE MESSAGE BOARD</h1>
-        
+
 
         <a href="{{ url_for('messages')}}">
             <article class="department">
@@ -20,7 +22,7 @@
                 <h2>SCIENCE</h2>
             </article>
         </a>
-
+        
     </section>
 {% endblock %}
         

@@ -1,6 +1,6 @@
 :root{
   --bg:#dedede;
-  --card:#ff5a5a;
+  --card:#ec602d;
   --accent:#4a4a4a;
   --input-bg:#fff;
 }
@@ -67,11 +67,20 @@ input[type="password"]{
   margin-top:0.75rem;
   background:var(--accent);
   color:#fff;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size:20px;
   border:none;
   border-radius:10px;
   cursor:pointer;
 }
+
+.btn:hover {
+  background: #3c3e4b;
+  transform: translateY(-3px) scale(1.01);
+}
+
+
 
 
 .flash {
@@ -85,7 +94,55 @@ input[type="password"]{
 .flash.danger{ background:#f8d7da; color:#842029; border:1px solid #f5c2c7; }
 
 
+@media (max-width:1024px){
+  .container{ width: 90%; }
+  .container .title{ font-size:42px; }
+  input[type="email"],
+  input[type="password"]{
+    font-size:15px;
+    padding:9px 12px;
+  }
+  .btn{ font-size:18px; padding:11px 16px; }
+}
+
+@media (max-width:768px){
+  .page{ padding:1.5rem; }
+  .container{ 
+    width: 95%; 
+    padding:2.5rem 1.75rem;
+  }
+  .container .title{ font-size:38px; }
+  input[type="email"],
+  input[type="password"]{
+    font-size:14px;
+    padding:8px 11px;
+  }
+  .btn{ font-size:16px; padding:10px 15px; }
+}
+
 @media (max-width:480px){
-  .container{ padding:2rem; }
-  .container .title{ font-size:36px; }
+  .page{ padding:1rem; }
+  .container{ 
+    width: 100%; 
+    padding:2rem; 
+    border-radius:8px;
+  }
+  .container .title{ 
+    font-size:32px;
+    letter-spacing:1px;
+    margin:0 0 1.5rem;
+  }
+  input[type="email"],
+  input[type="password"]{
+    font-size:13px;
+    padding:7px 10px;
+    border-radius:3px;
+  }
+  .btn{ 
+    font-size:14px; 
+    padding:9px 12px;
+    border-radius:8px;
+  }
+  label{ font-size:13px; }
+  .flash{ font-size:13px; padding:8px 10px; }
 }

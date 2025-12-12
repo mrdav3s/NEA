@@ -1,7 +1,7 @@
 #IMPORTS
 from flask import Flask, render_template, session, abort, redirect, url_for, request, flash, jsonify, send_from_directory
 import datetime
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 # import MySQLdb.cursors
 import sqlite3
 # from flask_mysqldb import MySQL
@@ -222,7 +222,7 @@ def profile():
             surname = t[2]
             gender = t[3]
             email = t[4]
-            subjectid = t[5]
+            subjectid = t[6]
         cursor.execute("SELECT * FROM Subjects WHERE SubjectID=?", (subjectid,))
         subjects = cursor.fetchall()
         for s in subjects:
@@ -233,7 +233,11 @@ def profile():
             personal_email = info[2]
             dob = info[3]
             qualifications = info[4]
-        return render_template("profile.html", firstname=firstname, surname=surname, gender=gender, email=email, subjectname=subjectname, personal_email=personal_email, dob=dob, qualifications=qualifications)
+        return render_template("profile.html", firstname=firstname, 
+                               surname=surname, gender=gender, 
+                               email=email, subjectname=subjectname, 
+                               personal_email=personal_email, dob=dob, 
+                               qualifications=qualifications)
     else:
         return redirect(url_for('login'))   
 
@@ -512,34 +516,94 @@ def view_post(post_id):
 
 
 
-@app.route('/new_post', methods=['GET', 'POST']) # Add Post route
-def new_post():
+@app.route('/new_post/<board>', methods=['GET', 'POST'])
+def new_post(board):
     if 'user' in session:
         if request.method == 'POST':
+            # Get teacher ID
             connection = sqlite3.connect("schooldata.db")
             cursor = connection.cursor()
             cursor.execute("SELECT TeacherID FROM Teachers WHERE Email=?", (session['user'],))
             teacher = cursor.fetchone()
             teacherid = teacher[0]
+
+            # Get form data
             title = request.form.get('title')
             content = request.form.get('content')
-            date = datetime.date.today()
-            time = datetime.datetime.now().time()
-            time = time.strftime("%H:%M")
-            attachments = request.form.get('attachments')
-        
+            date = str(datetime.date.today())
+            time = datetime.datetime.now().strftime("%H:%M")
+            attachments = request.files.get('attachments').filename if request.files.get('attachments') else None
 
-            
+            # Reconnect to insert post
             connection = sqlite3.connect("schooldata.db")
             cursor = connection.cursor()
-            cursor.execute("INSERT INTO Posts (Title, Content, Date, Time, Attachments, TeacherID) VALUES (?, ?, ?, ?, ?, ?)", 
-                           (title, content, date, time, attachments, teacherid))
-            connection.commit()
-            connection.close()
-            return redirect(url_for('messages'))
-        return render_template("new_post.html")
+
+            # Insert into correct board table
+            if board == 'general':
+                cursor.execute("""
+                    INSERT INTO Posts (Title, Content, Date, Time, Attachments, TeacherID)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (title, content, date, time, attachments, teacherid))
+                connection.commit()
+                connection.close()
+                return redirect(url_for('messages'))
+
+            elif board == 'computing':
+                cursor.execute("""
+                    INSERT INTO C_Posts (Title, Content, Date, Time, Attachments, TeacherID)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (title, content, date, time, attachments, teacherid))
+                connection.commit()
+                connection.close()
+                return redirect(url_for('computing_messages'))
+
+            elif board == 'maths':
+                cursor.execute("""
+                    INSERT INTO M_Posts (Title, Content, Date, Time, Attachments, TeacherID)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (title, content, date, time, attachments, teacherid))
+                connection.commit()
+                connection.close()
+                return redirect(url_for('maths_messages'))
+
+            elif board == 'english':
+                cursor.execute("""
+                    INSERT INTO E_Posts (Title, Content, Date, Time, Attachments, TeacherID)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (title, content, date, time, attachments, teacherid))
+                connection.commit()
+                connection.close()
+                return redirect(url_for('english_messages'))
+
+            elif board == 'science':
+                cursor.execute("""
+                    INSERT INTO S_Posts (Title, Content, Date, Time, Attachments, TeacherID)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (title, content, date, time, attachments, teacherid))
+                connection.commit()
+                connection.close()
+                return redirect(url_for('science_messages'))
+
+            elif board == 'history':
+                cursor.execute("""
+                    INSERT INTO H_Posts (Title, Content, Date, Time, Attachments, TeacherID)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (title, content, date, time, attachments, teacherid))
+                connection.commit()
+                connection.close()
+                return redirect(url_for('history_messages'))
+
+        return render_template("new_post.html", board=board)
     else:
         return redirect(url_for('login'))
+
+
+
+
+
+
+
+
 
 
 @app.route('/delete_post', methods=['GET', 'POST']) # Delete Post route

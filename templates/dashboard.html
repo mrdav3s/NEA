@@ -17,57 +17,68 @@
         </h2>
     </div>
     <div class="cards">
-        <div class="card">
-            <a href="{{ url_for('message_page') }}">
-                <img src="{{ url_for('static', filename='MsgBoard.png') }}" alt="" >
-            </a>
+        <a href="{{ url_for('message_page')}}" class="card card-1">
+            <img src="{{ url_for('static', filename='MsgBoard.png') }}" alt="Messages">
             <h2>Messages</h2>
-        </div>
+        </a>
 
-        <div class="card">
-            <a href="{{ url_for('students') }}">
-                <img src="{{ url_for('static', filename='students.png') }}" alt="" >
-            </a>
+        <a href="{{ url_for('students') }}" class="card card-2">
+            <img src="{{ url_for('static', filename='students.png') }}" alt="Students">
             <h2>Students</h2>
-        </div>
+        </a>
+
+        <a href="#" class="card card-3">
+            <img src="{{ url_for('static', filename='Analysis.png') }}" alt="Analysis">
+            <h2>Analysis</h2>
+        </a>
+
+        <a href="{{ url_for('students') }}" class="card card-4">
+            <img src="{{ url_for('static', filename='Smart.png') }}" alt="Smart Generator">
+            <h2>Smart Generator</h2>
+        </a>
     </div>
 {% endblock %}
 
-    <!-- <div class="page">
-        <div class="sidebar">
-            <img src="{{ url_for('static', filename='Profile.png') }}" alt="">  
-            <div class="info">
-                <h2> {{ firstname}} {{surname}}</h2>
-                <h3>{{email}}</h3>
-            </div>
-        </div>
-        <div class="container">
-            <h1 class="title">DASHBOARD</h1>
-            <div class="welcome">  
-                <h2>
-                    {%if gender=='M'%}
-                        Welcome, Mr {{ surname}}!
-                    {%else%}
-                        Welcome, Ms {{ surname}}!
-                    {%endif%}
-                </h2>
-            </div>
 
-            <div class="message">
-                <a href="{{ url_for('messages') }}">
-                    <img src="{{ url_for('static', filename='MsgBoard.png') }}" alt="" >
-                </a>
-                <h2>Messages</h2>
-            </div>
 
-            <div class="students">
-                <a href="{{ url_for('students') }}">
-                    <img src="{{ url_for('static', filename='students.png') }}" alt="" >
-                </a>
-                <h2>Students</h2>
-            </div>
 
-        </div>
+<!-- <head>
+  <title>Studsight - Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <h1 class="title">DASHBOARD</h1>
+    <div class="welcome">  
+        <h2>
+            {%if gender=='M'%}
+                Welcome, Mr {{ surname}}!
+            {%else%}
+                Welcome, Ms {{ surname}}!
+            {%endif%}
+        </h2>
     </div>
+    <div class="cards">
+        <a href="{{ url_for('message_page')}}" class="card card-1">
+            <img src="{{ url_for('static', filename='MsgBoard.png') }}" alt="Messages">
+            <h2>Messages</h2>
+        </a>
+
+        <a href="{{ url_for('students') }}" class="card card-2">
+            <img src="{{ url_for('static', filename='students.png') }}" alt="Students">
+            <h2>Students</h2>
+        </a>
+
+        <a href="#" class="card card-3">
+            <img src="{{ url_for('static', filename='Analysis.png') }}" alt="Analysis">
+            <h2>Analysis</h2>
+        </a>
+
+        <a href="{{ url_for('students') }}" class="card card-4">
+            <img src="{{ url_for('static', filename='Smart.png') }}" alt="Smart Generator">
+            <h2>Smart Generator</h2>
+        </a>
+    </div>
+
+    </main>
 </body>
 </html> -->

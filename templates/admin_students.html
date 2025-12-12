@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 {% block content %}
-    <a href="{{ url_for('add_student') }}" >Add New Student</a>
-    <a href="{{ url_for('delete_student') }}" >Delete Student</a>
-    <a href="#" >Import CSV</a>
+    <nav>
+        <a class="red" href="{{ url_for('delete_student') }}">Delete Student</a>
+        <a href="#">Import CSV</a>
+        <a href="{{ url_for('add_student') }}">Add New Student</a>
+    </nav>
 {% endblock %}

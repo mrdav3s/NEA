@@ -1,3 +1,73 @@
+h2{
+  font-size: 10vh;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
 h1 {
-  font-size: 30px;
+  margin-left: 2vw;
+  font-size: 4vh;
+  font-weight: normal;
+}
+
+section.post-content {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: wheat;
+}
+
+.back a{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 8px;
+    font-size: 120%;
+    color: #030000;
+}
+
+
+.back a:link, .back a:visited {
+  background-color: #41302f;
+  color: rgb(255, 255, 255);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.back a:hover, .back a:active {
+  background-color: rgb(147, 136, 136);
+}
+
+
+
+
+/* Responsive design for tablets and mobile */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
 }

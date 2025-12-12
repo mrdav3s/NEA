@@ -8,7 +8,9 @@
 
 {% block body %}
     <section class="post-detail">
-        <a href="#" onclick="history.back()">Back</a>
+        <div class="back">
+            <a href="#" onclick="history.back()">Back</a>
+        </div>
         <div class="container">
             <h2>{{ post[1] }}</h3>
             <p><strong>Date:</strong> {{ post[3] }} <strong>Time:</strong> {{ post[4] }}</p>

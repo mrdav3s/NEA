@@ -86,25 +86,33 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS M_Posts
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS E_Posts 
                (EPostID INTEGER PRIMARY KEY AUTOINCREMENT,Title TEXT, Content TEXT, 
-               Date DATE, Time Text, Attachments MEDIUMBLOB, Comments TEXT, TeacherID INTEGER,
+               Date DATE, Time Text, Attachments MEDIUMBLOB, TeacherID INTEGER,
                FOREIGN KEY(TeacherID) REFERENCES teachers(TeacherID))''')
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS S_Posts 
                (SPostID INTEGER PRIMARY KEY AUTOINCREMENT,Title TEXT, Content TEXT, 
-               Date DATE, Time Text, Attachments MEDIUMBLOB, Comments TEXT, TeacherID INTEGER,
+               Date DATE, Time Text, Attachments MEDIUMBLOB, TeacherID INTEGER,
                FOREIGN KEY(TeacherID) REFERENCES teachers(TeacherID))''')
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS C_Posts 
                (CPostID INTEGER PRIMARY KEY AUTOINCREMENT,Title TEXT, Content TEXT, 
-               Date DATE, Time Text, Attachments MEDIUMBLOB, Comments TEXT, TeacherID INTEGER,
+               Date DATE, Time Text, Attachments MEDIUMBLOB, TeacherID INTEGER,
                FOREIGN KEY(TeacherID) REFERENCES teachers(TeacherID))''')
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS H_Posts 
                (HPostID INTEGER PRIMARY KEY AUTOINCREMENT,Title TEXT, Content TEXT, 
-               Date DATE, Time Text, Attachments MEDIUMBLOB, Comments TEXT, TeacherID INTEGER,
+               Date DATE, Time Text, Attachments MEDIUMBLOB, TeacherID INTEGER,
                FOREIGN KEY(TeacherID) REFERENCES teachers(TeacherID))''')
 
 
-
+cursor.execute("INSERT INTO Teachers (Firstname, Surname, Gender, Email, Role, SubjectID) VALUES ('David', 'Akeredolu', 'M', 'akeredolud@mercia.school', 'A', 1)")
+cursor.execute("INSERT INTO Teachers (Firstname, Surname, Gender, Email, Role, SubjectID) VALUES ('Carly', 'Perzl', 'F', 'perzlc@mercia.school', 'T', 4)")
+cursor.execute("INSERT INTO Teachers (Firstname, Surname, Gender, Email, Role, SubjectID) VALUES ('Joshua', 'Curran', 'M', 'curranj@mercia.school', 'T', 5)")
+cursor.execute("INSERT INTO Subjects (Subjectname) VALUES ('Admin')")
+cursor.execute("INSERT INTO Subjects (Subjectname) VALUES ('Mathematics')")
+cursor.execute("INSERT INTO Subjects (Subjectname) VALUES ('English')")
+cursor.execute("INSERT INTO Subjects (Subjectname) VALUES ('Science')")
+cursor.execute("INSERT INTO Subjects (Subjectname) VALUES ('Computing')")
+cursor.execute("INSERT INTO Subjects (Subjectname) VALUES ('History')")
 
 connection.commit()

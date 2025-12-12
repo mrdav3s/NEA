@@ -1,10 +1,26 @@
 {% extends "base_page.html" %}
-{% block heaad %}
-    <title> StudSight - Profile</title>
+{% block head %}
+    <title>StudSight - Profile</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
 {% endblock %}
 {% block body %}
+<div class="back">
     <a href="#" onclick="history.back()">Back</a>
-    {% if gender == "M"}
-    <h1> </h1>
+</div>
+<section class="profile-section">
+    {% if gender == "M"%}
+        <h1> Mr {{ firstname }} {{ surname }}</h1>
+    {% else %}
+        <h1> Ms {{ firstname }} {{ surname }}</h1>
+    {% endif %}
+<img src="{{ url_for('static', filename='Profile.png') }}" alt="">
+<div class="profile-info">
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Gender:</strong> {{ gender }}</p>
+    <p><strong>Personal Email:</strong> {{ personal_email }}</p>
+    <p><strong>Subject:</strong> {{ subjectname }}</p>
+    <p><strong>Date of Birth:</strong> {{ dob }}</p>
+    <p><strong>Qualifications:</strong> {{ qualifications }}</p>
+</div>
+</section>
 {% endblock %}

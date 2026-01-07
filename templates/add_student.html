@@ -2,34 +2,39 @@
 
 {% block head %}
     <title>Studsight - Students</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='students.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_student.css') }}">
 {% endblock %}
 
 {% block body %}
+    <script src="{{ url_for('static', filename='add_student.js') }}"></script>
     <a href="#" onclick="history.back()">Back</a>
-    <form method="POST" action="{{ url_for('add_student') }}">
-        <h2>Add New Student</h2>
+    <form id="studentForm" method="POST" action="{{ url_for('add_student') }}">
+        <h1>Add New Student</h1>
 
-        <fieldset>
-            <legend>Student Info:</legend>
+    
+        <div class="tab">
+            <h2>Student Info:</h2>
 
-            <label for="firstname">First name:</label>
-            <input type="text" id="firstname" name="firstname" required><br><br>
+            <div class="input-container">
+                <input type="text" id="firstname" name="firstname" required>
+                <label for="firstname">First Name:</label><br>
+            </div>
 
-            <label for="surname">Surname:</label>
-            <input type="text" id="surname" name="surname" required><br><br>
-
-            <div>
-                <p>Select Gender:</p>
-                <input type="radio" id="male" name="gender" value="M" />
+            <div class="input-container">
+                <input type="text" id="surname" name="surname" required>
+                <label for="surname">Surname:</label><br>
+            </div>
+            <br><br>
+            <div class="gender-options">Gender:
+                <input type="radio" id="male" name="gender" value="M" required>
                 <label for="male">Male</label>
 
-                <input type="radio" id="female" name="gender" value="F" />
+                <input type="radio" id="female" name="gender" value="F" required>
                 <label for="female">Female</label>
             </div>
             <br>
 
-            <label for="yeargroup">Yeargroup:</label>
+            <label for="yeargroup">Yeargroup (7-13):</label>
             <input type="number" id="yeargroup" name="yeargroup" min="7" max="13" required><br><br>
 
             <label for="dob">Date of Birth:</label>
@@ -41,9 +46,8 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email"><br><br>
 
-        </fieldset>
-        <br><br>
-        <fieldset>
+        </div>
+        <div class="tab">
             <legend>Additional Info:</legend>
             
             <label for="parentname">Parent/Guardian Name:</label>
@@ -63,10 +67,10 @@
 
             <label for="enrollmentdate">Enrollment Date:  </label>
             <input type="date" id="enrollmentdate" name="enrollmentdate" required><br><br>
-        </fieldset>
-        <br><br>
-        <fieldset>
-            <legend>Medical Info:<br><br><small>If none, enter "N/A" for all fields</small></legend>
+        </div>
+
+        <div class="tab">
+            <legend>Medical Info:<br><br><small>If none, leave field empty</small></legend>
 
             <label for="conditions">Conditions: </label>
             <input placeholder="N/A" type="text" id="conditions" name="conditions"><br><br>
@@ -79,8 +83,32 @@
 
             <label for="needs">Needs</label>
             <input placeholder="N/A" type="text" id="needs" name="needs"><br><br>
-        </fieldset>
+
+        </div>
+
+        
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        </div>
+
+
+
         <br><br>
         <button type="submit">Add Student</button><br><br><br>
     </form>
+    <script src="{{ url_for('static', filename='add_student.js') }}"></script>
 {% endblock %}
+
+
+

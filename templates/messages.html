@@ -6,7 +6,7 @@
 {% block body %}
     <nav>
         <a class="back" href="{{ url_for('message_page') }}">Back</a>
-        <a class="delete" href="{{ url_for('delete_post') }}">Delete Post</a>
+        <a class="delete" href="{{ url_for('delete_post', board='general') }}">Delete Post</a>
         <a href="{{ url_for('new_post', board='general') }}">Create New Post</a>
         <br><br>
     </nav>
@@ -30,9 +30,6 @@
                         <strong>Time:</strong> {{ post[4] }}
                     </p>
 
-                    {% if post[5] %}
-                        <!-- <img src="{{ url_for('post_image', post_id=post[0]) }}" alt="Attachment" class="thumbnail"> -->
-                    {% endif %}
                 </article>
             </a>
         {% else %}
